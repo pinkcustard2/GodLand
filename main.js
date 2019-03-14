@@ -13,14 +13,12 @@ var setUp = function() {
 	document.write("<h2>-Earthly News-</h2>");
 }
 var randomNews = function(){
-	var randomNumber = Math.floor(Math.random()*6);
-	
-	document.write(earthlyNews[randomNumber] + "<br>");
-
-	
+	let randomNumber = Math.floor(Math.random()*6);
+	let d = new Date();
+    let hours = d.getHours();
+    let mins = d.getMinutes();
+	var secs = d.getSeconds();
+	document.write("<b>"+hours+":"+mins+":"+secs+"  "+"</b>"+earthlyNews[randomNumber] + "<br>");
 }
-
 setTimeout(setUp, 100);
 setInterval(randomNews, Math.floor(Math.random()*180000));
-
-
