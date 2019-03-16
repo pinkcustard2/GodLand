@@ -11,9 +11,10 @@ var min = 120;
 var exp = 0;
 var level = 1;
 var setUp = function() {
+	document.open();
 	document.write("<h1>God Land</h1>");
 	document.write("Your current level is: " + level + "<br>");
-	document.write("<h2>-Earthly News-</h2>");
+	document.write("<h2>-Your Hero's Diary-</h2>");
 }
 var randomNews = function(){
 	let randomNumber = Math.floor(Math.random()*6);
@@ -26,16 +27,10 @@ var randomNews = function(){
 	if (exp >= level * 100 + level){
 		exp = 0 
 		level++
-		document.write("You leveled up. Your current level is: " + level + "<br>");
-		setTimeout(levelUp,1000)
+		setTimeout(setUp,100)
 	}	else{
 		document.write("You earnt some exp. Your current exp is: " + exp + "<br>");
 	}
-}
-var levelUp = function(){
-	document.write("<h1>God Land</h1>");
-	document.write("Your current level is: " + "<div id=lvl>"+ level + "</div>"+"<br>");
-	document.write("<h2>-Earthly News-</h2>");
 }
 setTimeout(setUp, 100);
 setInterval(randomNews, Math.floor(Math.random()*180000));
